@@ -1,0 +1,35 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TECLA Lite – Simulador Cognitivo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>TECLA Lite</h1>
+    <p>Simulador Cognitivo para Expressão Alternativa – Fase 1</p>
+  </header>  <main>
+    <section id="interface">
+      <h2>Comunicação Assistida</h2>
+      <div class="teclado-visual">
+        <button onclick="responder('Estou bem')">🙂 Estou bem</button>
+        <button onclick="responder('Quero cantar')">🎵 Quero cantar</button>
+        <button onclick="responder('Preciso de ajuda')">❗ Preciso de ajuda</button>
+        <button onclick="responder('Teatro')">🎭 Teatro</button>
+        <button onclick="responder('Música')">🎼 Música</button>
+        <button onclick="responder('Silêncio')">🤫 Silêncio</button>
+      </div>
+    </section><section id="output">
+  <h2>Resposta Simulada:</h2>
+  <div id="resposta"></div>
+</section>
+
+  </main>  <footer>
+    <p>Versão Experimental – Criado por Dala De Carvalho</p>
+  </footer>  <script>
+    function responder(texto) {
+      document.getElementById('resposta').innerText = texto;
+    }
+  </script></body>
+</html>
