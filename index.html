@@ -1,12 +1,79 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html lang="pt">
 <head>
-<title>TECLA Lite</title>
-<link rel='stylesheet' href='style.css'>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tecla Lite – Comunicação Assistida</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 10px;
+      background-color: #4b9cd3;
+      color: white;
+      border-radius: 8px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #4b9cd3;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    #saida {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #222;
+      padding: 10px;
+      background-color: #e6f7ff;
+      border-radius: 8px;
+    }
+  </style>
 </head>
 <body>
-<h1>Bem-vindo ao TECLA Lite</h1>
-<script src='voice-panel.js'></script>
-<script src='ai-companion.js'></script>
-</body>
+  <header>
+    <h1>🧠 Tecla Lite</h1>
+    <p>Prototipagem inicial de assistente de comunicação para crianças autistas</p>
+  </header>
+  <div class="container">
+    <p><strong>Missão:</strong> Este é um protótipo funcional de um sistema que capta e devolve respostas humanizadas para auxiliar na comunicação de crianças autistas com seus educadores, pais ou cuidadores.</p><label for="entrada">Digite o que a criança deseja comunicar:</label>
+<input type="text" id="entrada" placeholder="Ex: Teatro Tecla" />
+<button onclick="responder()">Falar</button>
+
+<div id="saida"></div>
+
+  </div>  <script>
+    function responder() {
+      const entrada = document.getElementById("entrada").value;
+      let resposta = "Tecla disse: '" + entrada + "'. Vamos entender com carinho e atenção.";
+      document.getElementById("saida").innerText = resposta;
+
+      const synth = window.speechSynthesis;
+      const utterThis = new SpeechSynthesisUtterance(resposta);
+      utterThis.lang = 'pt-PT';
+      synth.speak(utterThis);
+    }
+  </script></body>
 </html>
